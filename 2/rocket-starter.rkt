@@ -16,18 +16,19 @@
 ; 
 
 
-;; RocketDescent is Natural[0, 100]
+;; RocketDescent is Number[0, 100]
 ;; interp. distance of rocket from earth in km
 (define rd1 100)
 (define rd2 50)
 (define rd3 0)
+(define rd4 0.5)
 
 #;
 (define (fn-for-rocket-descent rd)
   (... rd))
 
 ;; Template rules used:
-;; - atomic non-distinct: Natural[0, 100]
+;; - atomic non-distinct: Number[0, 100]
 
 
 ; 
@@ -47,7 +48,7 @@
 ;; outputs a string of the rocket's distance to Earth
 ;; and "The rocket has landed!" at the end
 (check-expect (rocket-descent-to-msg 100) "100")
-(check-expect (rocket-descent-to-msg 50) "50")
+(check-expect (rocket-descent-to-msg 0.5) "1/2")
 (check-expect (rocket-descent-to-msg 0) "The rocket has landed!")
 
 #;
