@@ -81,13 +81,8 @@
 ;;                                           |
 ;; l   empty                       true      |  false
 ;; s                           --------------------------------
-;; t   (cons Player Roster)        false     |
-;; a                                         |(local [(define r1-empty? (empty? r1))
-;;                                                    (define r2-empty? (empty? r2))]
-;;                                                   (cond [(and r1-empty? r2-empty?) true]
-;;                                                         [(or r1-empty? r2-empty?) false]
-;;                                                         [else 
-;;                                                          (all-play? (rest r1) (rest r2))]))
+;; t   (cons Player Roster)        false     |  (all-play? <rests>)
+;; a                                         |  
 
 
 ;; Roster Roster -> Boolean
@@ -134,6 +129,18 @@
 ;; Roster Roster -> ListOfMatch
 ;; given two teams, produces the list of tennis matches that will be played
 ;; assume same number of players
+
+
+;; CROSS PRODUCT OF TYPE COMMENTS TABLE
+;;  
+;;                                         lstb
+;;                               empty           (cons Player Roster)                
+;;                                           |
+;; l   empty                       empty     |  impossible
+;; s                           --------------------------------
+;; t   (cons Player Roster)      impossible  |  (cons (make-match <firsts>) (list-matches <rests>))
+;; a                                         | 
+
 
 (check-expect (list-matches R0 R0) empty)
 (check-expect (list-matches R1 R1) (list (make-match "Eugenie" "Eugenie")
