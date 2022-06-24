@@ -175,7 +175,7 @@
 
 
 
-(define WIDTH 200)
+(define WIDTH 400)
 
 
 ;; Mouse is Number[0, WIDTH]
@@ -223,7 +223,7 @@
          x]))
 
 
-
+(main 0)
 
 
 
